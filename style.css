@@ -1,0 +1,317 @@
+/* --- RESET E VARIÁVEIS --- */
+:root {
+    /* Paleta Premium */
+    --black: #000000;
+    --dark-grey: #2C2C2C; 
+    --bronze: #B27A4E;    
+    --beige: #DCC59A;     
+    --off-white: #EDE9E2; 
+    
+    --text-dark: #2C2C2C;
+    --text-white: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    font-family: 'Lato', sans-serif;
+    background-color: var(--off-white);
+    color: var(--text-dark);
+    scroll-behavior: smooth;
+}
+
+html { scroll-padding-top: 100px; }
+
+h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+ul { list-style: none; }
+a { text-decoration: none; color: inherit; }
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* --- ANIMAÇÕES --- */
+.hidden { opacity: 0; transform: translateY(30px); transition: all 1s; }
+.show { opacity: 1; transform: translateY(0); }
+.fade-in-up { animation: fadeInUp 1.2s ease-out; }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+/* --- HERO (TOPO) - FOTO DE FUNDO ONLINE --- */
+.hero {
+    /* Foto de Escritório/Justiça Profissional do Unsplash */
+    background: linear-gradient(rgba(20, 20, 20, 0.85), rgba(20, 20, 20, 0.75)), 
+                url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1600&auto=format&fit=crop'); 
+    background-size: cover;          
+    background-position: center;     
+    background-attachment: fixed;    
+    color: #fff;
+    min-height: 75vh; /* Um pouco mais alto para impor respeito */
+    display: flex;
+    flex-direction: column;
+    border-bottom: 5px solid var(--bronze);
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.hero-content h1, .hero-content p {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* --- MENU --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    margin-bottom: auto; 
+}
+
+/* LOGO CRIADA COM CSS (Sem imagem) */
+.logo { display: flex; align-items: center; gap: 15px; cursor: pointer; }
+.logo-icon { font-size: 3rem; color: var(--bronze); } /* Ícone da Balança */
+.logo-text { display: flex; flex-direction: column; justify-content: center; line-height: 1.1; }
+
+.logo-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.logo-subtitulo {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.75rem;
+    color: var(--bronze);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+    margin-top: 2px;
+}
+
+.nav-links { display: flex; gap: 25px; align-items: center; }
+.nav-links a {
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+.nav-links a:hover { color: var(--bronze); }
+
+.menu-toggle { display: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
+
+.hero-content { max-width: 800px; margin: auto 0; text-align: left; }
+.hero-content h1 { font-size: 3.2rem; margin-bottom: 20px; line-height: 1.2; }
+.hero-content p { font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9; }
+
+.btn-cta {
+    background-color: var(--bronze);
+    color: #fff;
+    padding: 15px 35px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.2s;
+    box-shadow: 0 4px 15px rgba(0,0,0, 0.3);
+}
+.btn-cta:hover { transform: scale(1.05); background-color: var(--beige); color: #000; }
+.btn-cta-outline {
+    border: 2px solid var(--bronze);
+    color: var(--bronze);
+    padding: 10px 25px;
+    border-radius: 4px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+.btn-cta-outline:hover { background: var(--bronze); color: #fff; }
+
+/* --- SEÇÕES GERAIS --- */
+section { padding: 80px 0; }
+.titulo-praticas { margin-bottom: 50px; border-left: 4px solid var(--bronze); padding-left: 20px; }
+.titulo-praticas h2 { font-size: 3rem; color: var(--text-dark); }
+
+/* --- DIFERENCIAIS --- */
+.diferenciais { background-color: var(--off-white); }
+.diferenciais-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+
+.card-dif {
+    padding: 30px;
+    border: 1px solid #dcdcdc;
+    text-align: left;
+    transition: 0.3s;
+    background: #fff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+.card-dif:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-color: var(--bronze);
+    transform: translateY(-5px);
+}
+.card-dif i { font-size: 2rem; color: var(--bronze); margin-bottom: 15px; }
+.card-dif h3 { font-size: 1.4rem; margin-bottom: 15px; color: var(--dark-grey); font-weight: 400; }
+.card-dif p { font-size: 0.95rem; color: #555; line-height: 1.6; }
+
+/* --- PRÁTICAS (Estilo Unificado Bege) --- */
+.praticas { background-color: #fff; }
+.grid-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+
+.card {
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    transition: 0.3s;
+    border-radius: 8px;
+    background-color: var(--beige); 
+    border: 2px solid #fff;
+    color: var(--dark-grey);
+}
+
+.card:hover { 
+    transform: translateY(-5px); 
+    z-index: 2; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
+    border-color: var(--bronze); 
+}
+
+.card h3 { font-size: 1.5rem; margin-bottom: 15px; font-weight: 400; color: var(--dark-grey); }
+.card-icon { 
+    font-size: 2.2rem; 
+    opacity: 1; 
+    margin-bottom: 20px; 
+    color: #ffffff; 
+    filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.15));
+}
+.card p { font-size: 0.95rem; opacity: 0.95; line-height: 1.6; color: var(--dark-grey); }
+
+/* --- SOBRE --- */
+.sobre-grid { display: flex; align-items: center; gap: 50px; }
+.sobre-texto { flex: 1; }
+.sobre-texto h2 { font-size: 3rem; margin-bottom: 10px; color: var(--black); }
+.oab { color: var(--bronze); font-size: 1.2rem; margin-bottom: 20px; font-weight: 700; }
+.sobre-texto p { margin-bottom: 15px; text-align: justify; color: var(--text-dark); line-height: 1.6; }
+.sobre-img { flex: 1; text-align: center; }
+.sobre-img img { max-width: 100%; border-radius: 5px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+
+/* --- FAQ --- */
+.faq { background-color: var(--off-white); }
+.faq-lista details {
+    background: #fff;
+    margin-bottom: 15px;
+    padding: 20px 25px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    cursor: pointer;
+    transition: 0.3s;
+}
+.faq-lista details[open] { border-left: 5px solid var(--bronze); }
+.faq-lista summary { font-weight: bold; color: var(--dark-grey); font-size: 1.1rem; list-style: none; outline: none; }
+.faq-lista summary::-webkit-details-marker { display: none; }
+.faq-lista p { margin-top: 15px; color: #555; font-size: 1rem; line-height: 1.6; }
+
+/* --- FOOTER --- */
+footer { margin-top: auto; }
+.contato { background: var(--black); color: #fff; padding-top: 80px; }
+.contato-grid { display: flex; gap: 40px; padding-bottom: 40px; }
+.info-contato { flex: 1; }
+.titulo-contato h2 { font-size: 2.5rem; margin-bottom: 30px; }
+.lista-contato li { display: flex; gap: 15px; margin-bottom: 20px; align-items: start; }
+.lista-contato i { color: var(--bronze); margin-top: 5px; }
+
+.redes-sociais .icons { display: flex; gap: 15px; margin-top: 15px; }
+.redes-sociais .icons a {
+    width: 45px; height: 45px;
+    border: 1px solid var(--bronze); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--bronze); transition: 0.3s;
+}
+.redes-sociais .icons a:hover { background: var(--bronze); color: #fff; }
+
+.mapa { flex: 1; min-height: 350px; border-radius: 5px; overflow: hidden; position: relative; }
+.mapa iframe { width: 100%; height: 100%; min-height: 350px; border: 0; }
+
+.footer-bottom { border-top: 1px solid #333; padding: 20px; text-align: center; font-size: 0.8rem; opacity: 0.7; }
+
+/* Link de Desenvolvedor */
+.dev-link { color: inherit; font-weight: bold; transition: 0.3s; }
+.dev-link:hover { color: var(--bronze); text-decoration: underline; }
+
+.whatsapp-fixed {
+    position: fixed;
+    bottom: 20px; right: 20px;
+    background-color: #25D366;
+    color: #fff;
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: 0.3s;
+}
+.whatsapp-fixed:hover { transform: scale(1.1); }
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 992px) {
+    .diferenciais-grid { grid-template-columns: 1fr; }
+    .grid-cards { grid-template-columns: repeat(2, 1fr); }
+    .sobre-grid, .contato-grid { flex-direction: column; }
+    .hero-content h1 { font-size: 2.5rem; }
+    .nav-links { display: none; } 
+    .menu-toggle { display: block; }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 80px; left: 0; width: 100%;
+        background: var(--dark-grey);
+        flex-direction: column;
+        padding: 30px;
+        text-align: center;
+        z-index: 999;
+        border-bottom: 2px solid var(--bronze);
+    }
+    .nav-links.active { display: flex; }
+    .grid-cards { grid-template-columns: 1fr; }
+    .mapa { min-height: 350px; order: -1; margin-bottom: 30px; }
+    .logo-img { height: 40px; }
+    .logo-titulo { font-size: 1.1rem; }
+    .logo-subtitulo { font-size: 0.6rem; }
+    .logo { gap: 10px; }
+}
+
+/* --- RESPONSIVIDADE TELAS GRANDES --- */
+@media (min-width: 1440px) {
+    .container { max-width: 1350px; }
+    .hero { min-height: 80vh; }
+}
+
+@media (min-width: 1920px) {
+    html { font-size: 18px; }
+    .container { max-width: 1600px; }
+    .hero-content h1 { font-size: 4.5rem; max-width: 1000px; }
+    .titulo-praticas h2 { font-size: 3.5rem; }
+    .card, .card-dif { padding: 50px 40px; }
+    .card h3, .card-dif h3 { font-size: 1.8rem; }
+    .mapa, .mapa iframe { min-height: 450px; }
+}
